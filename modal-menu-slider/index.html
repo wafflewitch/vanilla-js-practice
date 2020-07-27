@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/021fe29d7f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Sliding Menu + Fading Modal Demo</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="http://placekitten.com/300/300" alt="user" />
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <button id="toggle-btn" class="toggle-btn">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+
+      <h1>My Landing Page</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet, coffee cupcakes matcha latte toffee yum.
+      </p>
+
+      <button class="cta-btn" id="open-modal-btn">Sign Up</button>
+    </header>
+
+    <div class="container">
+      <h2>What is this page about?</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rem
+        voluptate, sapiente, facilis magnam ipsum tenetur voluptas ducimus
+        aperiam est, dolorem voluptatum perspiciatis! Excepturi, facere.
+        Cupiditate quos reiciendis doloribus quod.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+        amet placeat sequi quae aut ut neque quod iusto unde dicta.
+      </p>
+
+      <h2>Tell Me More</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
+        quibusdam iste ducimus commodi in? Veniam quis nostrum, aperiam iure
+        earum unde voluptate doloremque, ex rem aut nemo molestiae repellat eos
+        impedit vitae laborum mollitia totam sequi non quaerat illo! Doloribus.
+      </p>
+
+      <h2>Benefits</h2>
+      <ul>
+        <li>Purr Machines</li>
+        <li>Cuddle Buddies</li>
+        <li>Endless Biscuits</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate
+        nemo ducimus quam veniam! Temporibus, tempora illo! Ducimus et sint
+        itaque minus, quod praesentium voluptatibus iure nobis corporis enim
+        laboriosam repudiandae, non repellendus nulla deleniti animi
+        perspiciatis doloremque nisi dicta provident veniam? Quia vero placeat
+        laboriosam esse ut? Voluptatum consequuntur amet error ipsum excepturi
+        nihil laboriosam blanditiis, laborum quas facilis eveniet laudantium
+        doloribus? Sit accusantium commodi odit nam. Saepe, doloribus dolores?
+      </p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-modal-btn" id="close-modal-btn">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="modal-content">
+          <p>Register with us for a lieftime of kittens.</p>
+          <form class="modal-form">
+            <div>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-input"
+                placeholder="Enter Name"
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Enter Email"
+              />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="Enter Password"
+              />
+            </div>
+            <div>
+              <label for="password2">Confirm Password</label>
+              <input
+                type="password"
+                id="password2"
+                class="form-input"
+                placeholder="Enter Password Again"
+              />
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
