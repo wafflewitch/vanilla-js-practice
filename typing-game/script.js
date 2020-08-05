@@ -98,5 +98,9 @@ text.addEventListener('input', (e) => {
 
     // Clear
     e.target.value = '';
+
+    time += 3;
+
+    updateTime();
   }
 });
