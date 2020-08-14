@@ -61,6 +61,9 @@ function createCard(data, index) {
     </div>
   `;
 
+  // Use listener to flip card
+  card.addEventListener('click', () => card.classList.toggle('show-answer'));
+
   // Add card to deck of cards in DOM
   cardsEl.push(card);
 
