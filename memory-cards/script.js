@@ -68,6 +68,13 @@ function createCard(data, index) {
   cardsEl.push(card);
 
   cardsContainer.appendChild(card);
+
+  updateCurrentCardNumber();
+}
+
+// Show current card's position in the deck
+function updateCurrentCardNumber() {
+  currentEl.innerText = `${currentActiveCard + 1}/${cardsEl.length}`;
 }
 
 createCards();
