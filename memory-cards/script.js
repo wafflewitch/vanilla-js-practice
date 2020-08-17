@@ -17,20 +17,21 @@ let currentActiveCard = 0;
 const cardsEl = [];
 
 // Store card data
-const cardsData = [
-  {
-    question: "Who's the best Pokemon?",
-    answer: 'Eevee!',
-  },
-  {
-    question: "Who's the best kitty?",
-    answer: 'Poca!',
-  },
-  {
-    question: "Who's the best Sailor Senshi?",
-    answer: 'Chibimoon!',
-  },
-];
+// const cardsData = [
+//   {
+//     question: "Who's the best Pokemon?",
+//     answer: 'Eevee!',
+//   },
+//   {
+//     question: "Who's the best kitty?",
+//     answer: 'Poca!',
+//   },
+//   {
+//     question: "Who's the best Sailor Senshi?",
+//     answer: 'Chibimoon!',
+//   },
+// ];
+const cardsData = getCardsData();
 
 // Create all cards
 function createCards() {
@@ -79,7 +80,19 @@ function updateCurrentCardNumber() {
 
 createCards();
 
-// Event listeners for previous and next buttons
+// Get data for cards from local storage
+function getCardsData() {
+  const cards = JSON.parse(localStorage.getItem('cards'));
+  return cards === null ? [] : cards;
+}
+
+// Add data for cards to local storage
+function setCardsData(cards) {
+  localStorage.setItem('cards', JSON.stringify(cards));
+  window.location.reload();
+}
+
+// Event listeners
 
 nextBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card left';
@@ -107,4 +120,28 @@ prevBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card active';
 
   updateCurrentCardNumber();
+});
+
+showBtn.addEventListener('click', () => addContainer.classList.add('show'));
+
+hideBtn.addEventListener('click', () => addContainer.classList.remove('show'));
+
+addBtn.addEventListener('click', () => {
+  const question = questionEl.value;
+  const answer = answerEl.value;
+
+  if (question.trim() && answer.trim()) {
+    const newCard = { question, answer };
+
+    createCard(newCard);
+
+    questionEl.value = '';
+    answerEl.value = '';
+
+    addContainer.classList.remove('show');
+
+    cardsData.push(newCard);
+
+    setCardsData(cardsData);
+  }
 });
